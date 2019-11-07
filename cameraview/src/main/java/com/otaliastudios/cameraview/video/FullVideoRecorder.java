@@ -2,6 +2,7 @@ package com.otaliastudios.cameraview.video;
 
 import android.media.CamcorderProfile;
 import android.media.MediaRecorder;
+import android.util.Log;
 
 import com.otaliastudios.cameraview.CameraLogger;
 import com.otaliastudios.cameraview.VideoResult;
@@ -92,7 +93,8 @@ public abstract class FullVideoRecorder extends VideoRecorder {
         // 3. Set the output format. Before, change the profile data if the user
         // has specified a specific codec.
         if (stub.videoCodec == VideoCodec.H_264) {
-            mProfile.videoCodec = MediaRecorder.VideoEncoder.H264;
+            Log.d("wow","hevc is in place !");
+            mProfile.videoCodec = MediaRecorder.VideoEncoder.HEVC;
             mProfile.fileFormat = MediaRecorder.OutputFormat.MPEG_4;
         } else if (stub.videoCodec == VideoCodec.H_263) {
             mProfile.videoCodec = MediaRecorder.VideoEncoder.H263;
